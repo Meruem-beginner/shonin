@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゲーム統計管理ポータルツール</title>
+    <style>
+        :root {
+            --primary-color: #2b5876;
+            --secondary-color: #4e4376;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --text-muted: #666666;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #e9ecef 100%);
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* ツールカードのグリッドレイアウト */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        /* カードデザイン */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-tag {
+            align-self: flex-start;
+            background: rgba(43, 88, 118, 0.1);
+            color: var(--primary-color);
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            margin: 0 0 10px 0;
+            color: #222;
+        }
+
+        .card-description {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin: 0 0 20px 0;
+            flex-grow: 1;
+        }
+
+        /* アクションボタン群 */
+        .card-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .btn-view {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-view:hover {
+            background-color: #1e3d52;
+        }
+
+        .btn-input {
+            background-color: #e9ecef;
+            color: var(--text-color);
+        }
+
+        .btn-input:hover {
+            background-color: #dee2e6;
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>ゲーム統計管理ポータル</h1>
+        <p>各種イベントの分析やデータ入力用ツール一覧</p>
+    </header>
+
+    <div class="grid">
+        <!-- 偉大航路カード -->
+        <div class="card">
+            <span class="card-tag">イベント管理</span>
+            <h2 class="card-title">偉大航路</h2>
+            <p class="card-description">
+                国別のアイテムドロップ率や出現回数の推移をパイチャートで確認します。日付ごとのJSONを読み込み自動で集計します。
+            </p>
+            <div class="card-actions">
+                <a href="grand_line.html" class="btn btn-view">データを表示</a>
+                <a href="grand_line_input.html" class="btn btn-input">データ入力</a>
+            </div>
+        </div>
+
+        <!-- 将来の拡張枠（例） -->
+        <div class="card" style="border-top-color: #999; opacity: 0.7;">
+            <span class="card-tag" style="background: #eee; color: #666;">準備中</span>
+            <h2 class="card-title">次のイベントツール</h2>
+            <p class="card-description">
+                新しいイベント用の統計機能や便利なツールが追加されると、ここにカード形式で表示されます。
+            </p>
+            <div class="card-actions">
+                <a href="#" class="btn btn-input" style="pointer-events: none; width: 100%;">未実装</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 アイテム統計管理システム ポータル</p>
+    </footer>
+</div>
+
+</body>
+</html>
