@@ -32,9 +32,14 @@
     // ★★★ ご自身のGitHub環境に合わせて変更してください ★★★
     const GITHUB_USER = "Meruem-beginner"; 
     const GITHUB_REPO = "shonin";       
-    // 空白のままだと、現在のURLから自動推測を試みます（GitHub Pages上で動かす場合有効）
+    // 自動推測ロジックの最適化
     const user = GITHUB_USER || location.hostname.split('.')[0];
-    const repo = GITHUB_REPO || location.pathname.split('/')[1];
+    // grand_line.html に名前が変わったため、パスの解析を安全に変更
+    let repo = GITHUB_REPO;
+    if (!repo) {
+        const pathParts = location.pathname.split('/');
+        repo = pathParts[1] && pathParts[1] !== 'grand_line.html' ? pathParts[1] : '';
+    }
 
     const countries = ["博多", "開京", "明州", "泉州", "広州", "淡水", "安南", "ボニ", "タイ", "真臘", "スル", "三仏斉", "ジョホール", "大光国", "天竺", "セイロン", "ペルシャ", "大食国", "ミスル", "末羅国"];
     const colorMap = {};
