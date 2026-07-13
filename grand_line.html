@@ -17,15 +17,13 @@
 </head>
 <body>
 <div class="container">
+    <h2>国別アイテム統計</h2>
+    <div id="chartsContainer" class="charts-grid"></div>
+</div>
     <h2>登録データ一覧</h2>
     <div id="errorContainer"></div>
     <div id="loadingStatus" class="loading-msg">データを読み込み中...</div>
     <table id="historyTable"><thead><tr><th>日付</th></tr></thead><tbody id="historyBody"></tbody></table>
-
-    <h2>国別アイテム統計</h2>
-    <div id="chartsContainer" class="charts-grid"></div>
-</div>
-
 <script>
     Chart.register(ChartDataLabels);
 
